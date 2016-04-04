@@ -3596,6 +3596,38 @@ tags: {  # amp-youtube
   }
   spec_url: "https://www.ampproject.org/docs/reference/extended/amp-youtube.html"
 }
+tags: {  # amp-typekit
+  tag_name: "script"
+  spec_name: "amp-typekit extension .js script"
+  mandatory_parent: "head"
+  attrs: {
+    name: "async"
+    mandatory: true
+    value: ""
+  }
+  attrs: {
+    name: "custom-element"
+    mandatory: true
+    value: "amp-typekit"
+    dispatch_key: true
+  }
+  attrs: {
+    name: "src"
+    mandatory: true
+    value_regex: ".*/amp-typekit-(latest|0\\.1).js" # not hosted on CDN
+  }
+  attrs: {
+    name: "type"
+    value: "text/javascript"
+  }
+  cdata: {
+    blacklisted_cdata_regex: {
+      regex: "."
+      error_message: "contents"
+    }
+  }
+  spec_url: "https://github.com/ithinkihaveacat/amphtml/blob/amp-typekit/extensions/amp-typekit/amp-typekit.md"
+}
 # 4.11.2 The noscript element
 tags: {
   tag_name: "noscript"
@@ -4428,6 +4460,27 @@ tags: {  # <amp-youtube>
     supported_layouts: FIXED_HEIGHT
     supported_layouts: NODISPLAY
     supported_layouts: RESPONSIVE
+  }
+}
+tags: {  # <amp-typekit>
+  tag_name: "amp-typekit"
+  disallowed_ancestor: "head"
+  also_requires: "amp-typekit extension .js script"
+  attrs: {
+    name: "data-kitid"
+    mandatory: true
+    value_regex: "[a-z0-9]+"
+  }
+  attr_lists: "extended-amp-global"
+  spec_url: "https://github.com/ithinkihaveacat/amphtml/blob/amp-typekit/extensions/amp-typekit/amp-typekit.md"
+  amp_layout: {
+    supported_layouts: NODISPLAY
+  }
+  cdata: {
+    blacklisted_cdata_regex: { # TODO Figure out why this doesn't work
+      regex: "."
+      error_message: "contents"
+    }
   }
 }
 

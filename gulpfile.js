@@ -95,6 +95,7 @@ function buildExtensions(options) {
   buildExtension('amp-soundcloud', '0.1', false, options);
   buildExtension('amp-springboard-player', '0.1', false, options);
   buildExtension('amp-install-serviceworker', '0.1', false, options);
+  buildExtension('amp-typekit', '0.1', false, options);
   /**
    * @deprecated `amp-slides` is deprecated and will be deleted before 1.0.
    * Please see {@link AmpCarousel} with `type=slides` attribute instead.
@@ -356,6 +357,7 @@ function buildExamples(watch) {
   buildExample('multiple-docs.html');
   buildExample('youtube.amp.html');
   buildExample('openx.amp.html');
+  buildExample('typekit.amp.html');
 
   // TODO(dvoytenko, #1393): Enable for proxy-testing.
   // // Examples are also copied into `c/` directory for AMP-proxy testing.
@@ -718,4 +720,3 @@ gulp.task('extensions', 'Build AMP Extensions', buildExtensions);
 gulp.task('watch', 'Watches for changes in files, re-build', watch);
 gulp.task('build-experiments', 'Builds experiments.html/js', buildExperiments);
 gulp.task('build-login-done', 'Builds login-done.html/js', buildLoginDone);
-
