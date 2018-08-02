@@ -179,7 +179,7 @@ Here is a full example using `amp-story-auto-ads` together with some templates i
 At runtime, an `amp-ad` element is dynamically inserted:
 
 ```html
-<amp-ad type="custom"
+<amp-ad type="custom">
   data-url="https://adserver.com/getad?slot=abcd1234"
 </amp-ad>
 ```
