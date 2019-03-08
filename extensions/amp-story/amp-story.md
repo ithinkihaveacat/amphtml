@@ -508,9 +508,11 @@ Example:
 
 ```html
 <amp-story-grid-layer template="fill">
-  <amp-img src="cat.jpg"></amp-img>
+  <amp-img width="1" height="1" src="cat.jpg"></amp-img>
 </amp-story-grid-layer>
 ```
+
+Note that the `width` and `height` attributes are needed for validation, but since (in this case) it is shown full bleed, the values are discarded.
 
 ##### vertical
 
